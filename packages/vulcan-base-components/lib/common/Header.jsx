@@ -5,7 +5,7 @@ import { withCurrentUser, getSetting, Components, registerComponent } from 'mete
 const Header = (props, context) => {
   
   const logoUrl = getSetting("logoUrl");
-  const siteTitle = getSetting("title", "My App");
+  const siteTitle = getSetting("title");
   const tagline = getSetting("tagline");
 
   return (
