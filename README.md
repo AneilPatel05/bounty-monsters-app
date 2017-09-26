@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <img src="https://d3vv6lp55qjaqc.cloudfront.net/items/2B3C1z2V2y421p2I0P42/vulcan-logo-noborder.png" width="200">
 
 # Vulcan (formerly Telescope)
@@ -17,3 +18,6 @@ This is the Apollo/GraphQL version of Telescope, now known as [Vulcan](http://vu
 You can find the older, non-Apollo version of Telescope Nova on the [nova-classic](https://github.com/TelescopeJS/Telescope/tree/nova-classic) branch. 
 
 You can find the even older, non-React version of Telescope on the [legacy](https://github.com/TelescopeJS/Telescope/tree/legacy) branch.
+=======
+# bounty-monsters-app
+>>>>>>> 875ec03311bd94f48de94096e8eee44994b0d332
