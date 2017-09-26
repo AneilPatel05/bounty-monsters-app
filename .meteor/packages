@@ -22,5 +22,6 @@ accounts-password@1.4.0
 # example-permissions
 # example-membership
 # example-interfaces
-bm-ico
-bm-bounties
+#bm-ico
+#bm-bounties
+#bm-icos

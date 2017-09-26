@@ -1,8 +1,8 @@
 import Users from 'meteor/vulcan:users';
-import Bounties from './collection.js';
+import ICOs from './collection.js';
 
 /**
- * @summary Bounties config namespace
+ * @summary Posts config namespace
  * @type {Object}
  */
 const formGroups = {
@@ -13,7 +13,7 @@ const formGroups = {
 };
 
 /**
- * @summary Bounties schema
+ * @summary ICO schema
  * @type {Object}
  */
 const schema = {
@@ -51,9 +51,9 @@ const schema = {
   /**
     URL
   */
-  ico_id: {
+  url: {
     type: String,
-    optional: false,
+    optional: true,
     max: 500,
     viewableBy: ['guests'],
     insertableBy: ['members'],
@@ -65,7 +65,7 @@ const schema = {
   /**
     Title
   */
-  bounty_title: {
+  title: {
     type: String,
     optional: false,
     max: 500,
@@ -76,7 +76,7 @@ const schema = {
     order: 20,
     searchable: true
   },
-  
+ 
   /**
     Post body (markdown)
   */
@@ -99,40 +99,8 @@ const schema = {
     viewableBy: ['guests'],
   },
   /**
-   Post Excerpt
-   */
-  bounty_type: {
-    type: String,
-    optional: false,
-    viewableBy: ['guests'],
-    searchable: true
-  },
-  /**
     Count of how many times the post's page was viewed
   */
-  viewCount: {
-    type: Number,
-    optional: true,
-    viewableBy: ['admins'],
-    defaultValue: 0
-  },
-  /**
-    Timestamp of the last comment
-  */
-  lastCommentedAt: {
-    type: Date,
-    optional: true,
-    viewableBy: ['guests'],
-  },
-  /**
-    Count of how many times the post's link was clicked
-  */
-  clickCount: {
-    type: Number,
-    optional: true,
-    viewableBy: ['admins'],
-    defaultValue: 0
-  },
   /**
     The post's status. One of pending (`1`), approved (`2`), or deleted (`3`)
   */
@@ -146,12 +114,12 @@ const schema = {
     onInsert: document => {
       if (document.userId && !document.status) {
         const user = Users.findOne(document.userId);
-        return Bounties.getDefaultStatus(user);
+        return ICOs.getDefaultStatus(user);
       }
     },
     form: {
       noselect: true,
-      options: () => Bounties.statuses,
+      options: () => ICOs.statuses,
       group: 'admin'
     },
     group: formGroups.admin
@@ -163,15 +131,6 @@ const schema = {
     type: Boolean,
     optional: true,
     viewableBy: ['guests'],
-  },
- 
-  /**
-    Whether the post is inactive. Inactive Bounties see their score recalculated less often
-  */
-  inactive: {
-    type: Boolean,
-    optional: true,
-    defaultValue: false
   },
   /**
     Save info for later spam checking on a post. We will use this for the akismet package
@@ -218,9 +177,9 @@ const schema = {
     resolveAs: {
       fieldName: 'user',
       type: 'User',
-      resolver: async ( bounty, args, context) => {
-        if (!bounty.userId) return null;
-        const user = await context.Users.loader.load(bounty.userId);
+      resolver: async (ico, args, context) => {
+        if (!ico.userId) return null;
+        const user = await context.Users.loader.load(ico.userId);
         return context.Users.restrictViewableFields(context.currentUser, context.Users, user);
       },
       addOriginalField: true

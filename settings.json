@@ -48,41 +48,47 @@
     {
       "name": "BitcoinTalk Signature & Avatars",
       "description": "BitcoinTalk Signature & Avatars",
-      "order": 4,
+      "order": 1,
       "slug": "testcat1"
     },
     {
       "name": "YouTube Video",
       "description": "YouTube Video",
-      "order": 7,
+      "order": 2,
       "slug": "testcat2"
     },
     {
       "name": "Ambassadors Campaign",
       "description": "Ambassadors Campaign",
-      "order": 10,
+      "order": 3,
       "slug": "testcat3"
     }
     ,
     {
       "name": "Invite friends",
       "description": "Invite friend to the Telegram group",
-      "order": 10,
+      "order": 4,
       "slug": "testcat4"
     }
     ,
     {
-      "name": "Ambassadors Campaign",
-      "description": "Ambassadors Campaign",
-      "order": 10,
-      "slug": "testcat3"
+      "name": "Translations",
+      "description": "Translations",
+      "order": 5,
+      "slug": "testcat7"
     }
     ,
     {
-      "name": "Ambassadors Campaign",
-      "description": "Ambassadors Campaign",
-      "order": 10,
-      "slug": "testcat3"
+      "name": "Promotion : Facebook",
+      "description": "Promotion : Facebook",
+      "order": 6,
+      "slug": "testcat5"
+    },
+    {
+      "name": "Promotion : Twitter",
+      "description": "Promotion : Facebook",
+      "order": 7,
+      "slug": "testcat6"
     }
   ],
   "oAuth": {

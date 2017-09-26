@@ -15,8 +15,9 @@ Package.onUse(function (api) {
     'vulcan:core@1.7.0',
 
     // vulcan packages
-    //'vulcan:posts@1.7.0',
-    'bm-bounties',
+    'vulcan:posts@1.7.0',
+    //'bm-bounties',
+    //'bm-icos',
     'vulcan:comments@1.7.0',
     'vulcan:voting@1.7.0',
     'vulcan:accounts@1.7.0',
