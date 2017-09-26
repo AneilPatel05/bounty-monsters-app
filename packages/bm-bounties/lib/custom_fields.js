@@ -1,11 +1,14 @@
-import Users from "meteor/vulcan:users";
+
+/**import Users from "meteor/vulcan:users";
 
 Users.addField([
   /**
     Count of the user's bounties
   */
+
+/**
   {
-    fieldName: "bountyCount",
+    fieldName: "bountiesCount",
     fieldSchema: {
       type: Number,
       optional: true,
@@ -16,6 +19,8 @@ Users.addField([
   /**
     The user's associated bounties (GraphQL only)
   */
+
+/**
   {
     fieldName: "bounties",
     fieldSchema: {
@@ -39,3 +44,4 @@ Users.addField([
     }
   }
 ]);
+ */

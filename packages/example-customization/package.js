@@ -6,7 +6,8 @@ Package.onUse( function(api) {
 
   api.use([
     'vulcan:core',
-    'example-forum',
+    //'example-forum',
+    'bm-ico',
 
     'fourseven:scss@4.5.0',
   ]);
